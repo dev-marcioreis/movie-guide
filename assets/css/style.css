@@ -13,3 +13,114 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/*==========Root==========*/
+:root {
+    
+    --dark-color: hsl(0, 0%, 13%);
+    --white-color: hsl(0, 0%, 100%);
+    --color-1: hsl(347, 100%, 71%);
+    --transition: all 400ms ease;
+    --shadow: 0px 3px 6px hsla(0, 0%, 0%, 0.4);
+    --shadow-1: -5px 8px 10px hsla(0, 0%, 43%, 0.2);
+    --gradient: linear-gradient(180deg, hsl(201, 65%, 19%) 0%, hsla(201, 65%, 19%, 0.4) 30%, hsla(201, 65%, 19%, 0) 50%);
+    --gradient-1: linear-gradient(90deg, hsl(16, 98%, 83%) 0%, hsl(49, 91%, 91%) 100%); 
+    
+}
+
+/*==========Base==========*/
+body {
+    height: 100vh;
+    background: var(--gradient);
+    color: var(--dark-color);
+}
+
+/*==========Container==========*/
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90vw;
+    max-width: 50rem;
+    height: 80vh;
+    padding: 3rem;
+    background: var(--white-color);
+    box-shadow: var(--shadow);
+    font-size: 1.2rem;
+    transform: translate(-50%, -50%);
+    border-radius: .5rem;
+}
+.search__container {
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    gap: .7rem;
+}
+.search__container input, .search__container button {
+    font-size: 1rem;
+    border-radius: .3rem;
+    padding: .4rem;
+    box-shadow: var(--shadow-1);
+    transition: var(--transition);
+}
+.search__container input {
+    background: var(--transparent-color);
+    border-bottom: 2px solid var(--dark-color);
+    border-right: 2px solid var(--dark-color);
+    color: var(--dark-color);
+}
+.search__container input:focus {
+    border-color: var(--color-1);
+    box-shadow: none;
+}
+.search__container button {
+    background: var(--color-1);
+    color: var(--white-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+.search__container button:hover {
+    box-shadow: none;
+}
+
+
+/*==========Media Query big screens==========*/
+@media (min-width: 1600px) {
+    .container {
+        max-width: 90rem;
+        padding: 3rem;
+        font-size: 1.3rem;
+    }
+    .search__container {
+        gap: 1rem;
+    }
+    .search__container input, .search__container button {
+        font-size: 1.3rem;
+        padding: .5rem;
+    }
+
+}
+
+
+/*==========Media Query small screens==========*/
+@media (max-width: 768px) {
+    .container {
+        width: 95vw;
+        padding: 1rem .5rem;
+        font-size: 1rem;
+    }
+    .search__container {
+        gap: .5rem;
+        grid-template-columns: 9fr 2fr;
+    }
+    .search__container input {
+        font-size: .9rem;
+    }
+    .search__container button {
+        font-size: 1.2rem;
+    }
+    .search__container button span {
+        display: none;
+    }
+
+}
