@@ -41,7 +41,7 @@ body {
     left: 50%;
     width: 90vw;
     max-width: 50rem;
-    height: 80vh;
+    height: auto;
     padding: 3rem;
     background: var(--white-color);
     box-shadow: var(--shadow);
@@ -82,6 +82,72 @@ body {
 .search__container button:hover {
     box-shadow: none;
 }
+.result {
+    margin-block-start: 2rem;
+}
+.info {
+    position: relative;
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    place-items: center;
+}
+.poster {
+    width: 100%;
+    border-radius: .5rem;
+    box-shadow: var(--shadow);
+    filter: brightness(1.5) contrast(1.4);
+}
+.title {
+    color: var(--color-1);
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+}
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    margin-block-start: .5rem;
+}
+.rating i, .rating h4 {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-1);
+}
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-block-start: .5rem;
+    font-size: 1.1rem;
+    margin-block-end: 1rem;
+}
+.genre {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.genre div {
+    background: var(--color-1);
+    padding: .2rem .4rem;
+    border-radius: .3rem;
+    color: var(--white-color);
+    font-size: .8rem;
+}
+h5 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-1);
+    margin-block-start: 1rem;
+}
+p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-block-start: .4rem;
+}
 
 
 /*==========Media Query big screens==========*/
@@ -96,7 +162,32 @@ body {
     }
     .search__container input, .search__container button {
         font-size: 1.3rem;
-        padding: .5rem;
+        padding: .8rem;
+    }
+    .poster {
+        width: 80%;
+    }
+    .title {
+        font-size: 3.5rem;
+    }
+    .rating i, .rating h4 {
+        font-size: 2.5rem;
+    }
+    .details {
+        font-size: 1.5rem;
+    }
+    .genre {
+        gap: 3rem;
+    }
+    .genre div {
+        padding: .5rem 1rem;
+        font-size: 1.2rem;
+    }
+    h5 {
+        font-size: 1.7rem;
+    }
+    p {
+        font-size: 1.2rem;
     }
 
 }
@@ -105,14 +196,15 @@ body {
 /*==========Media Query small screens==========*/
 @media (max-width: 768px) {
     body {
-        background: var(--white-color);
+        height: auto;
     }
     .container {
         width: 95vw;
-        height: 95vh;
         padding: 1rem .5rem;
         font-size: 1rem;
         box-shadow: none;
+        margin-block-start: 6rem;
+        text-align: center;
     }
     .search__container {
         gap: .5rem;
@@ -120,12 +212,43 @@ body {
     }
     .search__container input {
         font-size: .9rem;
+        padding: .6rem;
     }
     .search__container button {
         font-size: 1.2rem;
     }
     .search__container button span {
         display: none;
+    }
+    .info {
+        grid-template-columns: 1fr;
+    }
+    .poster {
+        width: 80%;
+        margin-block-end: 1rem;
+    }
+    .title {
+        font-size: 1.2rem;
+    }
+    .rating i, .rating h4 {
+        font-size: 1.2rem;
+    }
+    .details {
+        font-size: .8rem;
+    }
+    .genre {
+        margin-block-end: 1rem;
+    }
+    .genre div {
+        font-size: .7rem;
+    }
+    h5 {
+        text-align: left;
+        font-size: 1.1rem;
+    }
+    p {
+        font-size: .8rem;
+        text-align: left;
     }
 
 }
