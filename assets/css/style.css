@@ -104,10 +104,15 @@ body {
 
 /*==========Media Query small screens==========*/
 @media (max-width: 768px) {
+    body {
+        background: var(--white-color);
+    }
     .container {
         width: 95vw;
+        height: 95vh;
         padding: 1rem .5rem;
         font-size: 1rem;
+        box-shadow: none;
     }
     .search__container {
         gap: .5rem;
