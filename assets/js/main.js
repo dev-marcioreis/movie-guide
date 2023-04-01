@@ -1,12 +1,12 @@
 // Initial references
-let movieNameRef = document.querySelector('.movieName')
-let searchBtn = document.querySelector('.searchBtn')
-let result = document.querySelector('.result')
+const movieNameRef = document.querySelector('.movieName')
+const searchBtn = document.querySelector('.searchBtn')
+const result = document.querySelector('.result')
 
 // Function to fetch data from API
 let getMovie = () => {
     let movieName = movieNameRef.value
-    let url = `http://www.omdbapi.com/?t=${movieName}&apikey=${key}&language=pt-BR`
+    const url = `http://www.omdbapi.com/?t=${movieName}&apikey=${key}&language=pt-BR`
 
     // If input field is empty
     if(movieName.length <= 0) {
@@ -14,7 +14,9 @@ let getMovie = () => {
     } else {
         fetch(url).then(resp => resp.json()).then(data => {
 
-            result.innerHTML = `
+            if(data.Response = 'Try') {
+
+                result.innerHTML = `
                 <div class="info">
                     <img src=${data.Poster} class="poster" />
                     <div>
@@ -38,8 +40,15 @@ let getMovie = () => {
                 <h5>Elenco:</h5>
                 <p>${data.Actors}</p>
             `
+
+            } else {
+                result.innerHTML = `<h3 class="msg">${data.Error}</h3>`
+            }
+        }).catch(() => {
+            result.innerHTML = `<h3 class="msg">Aconteceu um erro!</h3>`
         })
     }
 }
 
+searchBtn.addEventListener('click', getMovie)
 window.addEventListener('load', getMovie)
