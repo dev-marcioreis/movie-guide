@@ -7,7 +7,7 @@ Você pode encontrar o filme, ver a classificação, a sinopse e o elenco.
 
 ## 🚀 95% finalizado.
 
-## 📋 Técnologias
+## 📋 Tecnologias
 JavaScript + API
 
 ## ✒️ Autor
